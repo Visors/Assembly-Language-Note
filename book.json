@@ -18,7 +18,9 @@
             }
         },
         "plugins": [
-            "sharing",
+            "pageview-count",
+            "disqus",
+            "-sharing","sharing-plus",
             "-lunr", "-search", "search-plus",
             "anchor-navigation-ex-toc",
             "tbfed-pagefooter",
@@ -29,6 +31,9 @@
             "toggle-chapters"
         ],
         "pluginsConfig":{
+            "disqus": {
+                "shortName": "asm-2"
+            },
             "anchor-navigation-ex-toc" : {
                 "showLevel":true,
                 "multipleH1":false,
@@ -45,6 +50,20 @@
                 "copyright":"Written by Visors",
                 "modify_label": "本文档更新于：",
                 "modify_format": "YYYY-MM-DD HH:mm"
+            },
+            "sharing": {
+                "douban": false,
+                "facebook": false,
+                "google": false,
+                "pocket": false,
+                "qq": true,
+                "qzone": true,
+                "twitter": false,
+                "weibo": true,
+                "all": [
+                    "douban", "facebook", "google", "instapaper", "linkedin","twitter", "weibo", 
+                    "messenger","qq", "qzone","viber","whatsapp"
+                ]
             }
         }
     }
