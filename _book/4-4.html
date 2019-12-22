@@ -1,0 +1,766 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4 除法指令 · 汇编语言学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-5.html" />
+    
+    
+    <link rel="prev" href="4-3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1 计算机中数的表示
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    1.1 二进制和十六进制数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    1.2 字符编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1-3.html">
+            
+                <a href="1-3.html">
+            
+                    
+                    1.3 有符号整数的二进制补码表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1-4.html">
+            
+                <a href="1-4.html">
+            
+                    
+                    1.4 二进制补码数的加减法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2 计算机系统的组成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
+            
+                <a href="2-1.html">
+            
+                    
+                    2.1 微机硬件：存储器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+            
+                <a href="2-2.html">
+            
+                    
+                    2.2 微机的硬件：CPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2-3.html">
+            
+                <a href="2-3.html">
+            
+                    
+                    2.3 微机硬件：输入/输出设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2-4.html">
+            
+                <a href="2-4.html">
+            
+                    
+                    2.4 PC软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    3 汇编语言的要素
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="3-1.html">
+            
+                <a href="3-1.html">
+            
+                    
+                    3.1 汇编语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="3-2.html">
+            
+                <a href="3-2.html">
+            
+                    
+                    3.2 一个完整的实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3-3.html">
+            
+                <a href="3-3.html">
+            
+                    
+                    3.3 程序的汇编、链接和运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="3-4.html">
+            
+                <a href="3-4.html">
+            
+                    
+                    3.4 汇编器清单文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="3-5.html">
+            
+                <a href="3-5.html">
+            
+                    
+                    3.5 常数操作数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="3-6.html">
+            
+                <a href="3-6.html">
+            
+                    
+                    3.6 指令中的操作数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="3-7.html">
+            
+                <a href="3-7.html">
+            
+                    
+                    3.7 使用IO.H中宏的输入/输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="3-8.html">
+            
+                <a href="3-8.html">
+            
+                    
+                    3.8 常见运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    4 基本指令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="4-1.html">
+            
+                <a href="4-1.html">
+            
+                    
+                    4.1 复制数据指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="4-2.html">
+            
+                <a href="4-2.html">
+            
+                    
+                    4.2 整数的加法和减法指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="4-3.html">
+            
+                <a href="4-3.html">
+            
+                    
+                    4.3 乘法指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="4-4.html">
+            
+                <a href="4-4.html">
+            
+                    
+                    4.4 除法指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="4-5.html">
+            
+                <a href="4-5.html">
+            
+                    
+                    4.5 大数的加减
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="4-6.html">
+            
+                <a href="4-6.html">
+            
+                    
+                    4.6 微代码抽象级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >4.4 除法指令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#44-&#x9664;&#x6CD5;&#x6307;&#x4EE4;"><b> </b>4.4 &#x9664;&#x6CD5;&#x6307;&#x4EE4;</a></li><ul><li><span class="title-icon "></span><a href="#div-&#x6307;&#x4EE4;"><b>1. </b>DIV &#x6307;&#x4EE4;</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;"><b>2. </b>&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF08;cbw&#x3001;cwd&#x3001;cdq&#xFF09;"><b>2.1. </b>&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF08;CBW&#x3001;CWD&#x3001;CDQ&#xFF09;</a></li><li><span class="title-icon "></span><a href="#idiv-&#x6307;&#x4EE4;"><b>2.2. </b>IDIV &#x6307;&#x4EE4;</a></li></ul></ul></ul></div><a href="#44-&#x9664;&#x6CD5;&#x6307;&#x4EE4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="44-&#x9664;&#x6CD5;&#x6307;&#x4EE4;"><a name="44-&#x9664;&#x6CD5;&#x6307;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#44-&#x9664;&#x6CD5;&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a> 4.4 &#x9664;&#x6CD5;&#x6307;&#x4EE4;</h1>
+<h2 id="div-&#x6307;&#x4EE4;"><a name="div-&#x6307;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#div-&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>1. DIV &#x6307;&#x4EE4;</h2>
+<p>32 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;DIV&#xFF08;&#x65E0;&#x7B26;&#x53F7;&#x9664;&#x6CD5;&#xFF09;&#x6307;&#x4EE4;&#x6267;&#x884C; 8 &#x4F4D;&#x3001;16 &#x4F4D;&#x548C; 32 &#x4F4D;&#x65E0;&#x7B26;&#x53F7;&#x6570;&#x9664;&#x6CD5;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x5355;&#x5BC4;&#x5B58;&#x5668;&#x6216;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x9664;&#x6570;&#x3002;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-assembly">DIV reg/mem8
+DIV reg/meml6
+DIV reg/mem32
+</code></pre>
+<p>&#x4E0B;&#x8868;&#x7ED9;&#x51FA;&#x4E86;&#x88AB;&#x9664;&#x6570;&#x3001;&#x9664;&#x6570;&#x3001;&#x5546;&#x548C;&#x4F59;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x88AB;&#x9664;&#x6570;</th>
+<th>&#x9664;&#x6570;</th>
+<th>&#x5546;</th>
+<th>&#x4F59;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AX</td>
+<td>reg/mem8</td>
+<td>AL</td>
+<td>AH</td>
+</tr>
+<tr>
+<td>DX:AX</td>
+<td>reg/mem16</td>
+<td>AX</td>
+<td>DX</td>
+</tr>
+<tr>
+<td>EDX:EAX</td>
+<td>reg/mem32</td>
+<td>EAX</td>
+<td>EDX</td>
+</tr>
+</tbody>
+</table>
+<p>64 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;DIV &#x6307;&#x4EE4;&#x7528; RDX:RAX &#x4F5C;&#x88AB;&#x9664;&#x6570;&#xFF0C;&#x7528; 64 &#x4F4D;&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x6570;&#x4F5C;&#x9664;&#x6570;, &#x5546;&#x5B58;&#x653E;&#x5230; RAX&#xFF0C;&#x4F59;&#x6570;&#x5B58;&#x653E;&#x5728; RDX &#x4E2D;&#x3002;</p>
+<h2 id="&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;"><a name="&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;</h2>
+<p>&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;&#x51E0;&#x4E4E;&#x4E0E;&#x65E0;&#x7B26;&#x53F7;&#x9664;&#x6CD5;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x533A;&#x522B;&#xFF1A;&#x5728;&#x6267;&#x884C;&#x9664;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;&#x5FC5;&#x987B;&#x5BF9;&#x88AB;&#x9664;&#x6570;&#x8FDB;&#x884C;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x3002;</p>
+<p>&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x662F;&#x6307;&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x7684;&#x6700;&#x9AD8;&#x4F4D;&#x590D;&#x5236;&#x5230;&#x5305;&#x542B;&#x8BE5;&#x6570;&#x7684;&#x53D8;&#x91CF;&#x6216;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6240;&#x6709;&#x9AD8;&#x4F4D;&#x4E2D;&#x3002;&#x4E3A;&#x4E86;&#x8BF4;&#x660E;&#x4E3A;&#x4F55;&#x6709;&#x6B64;&#x5FC5;&#x8981;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x4E0D;&#x8FD9;&#x4E48;&#x505A;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4F7F;&#x7528; MOV &#x628A; -101 &#x8D4B;&#x7ED9; AX&#xFF0C;&#x5373; DX:AX &#x7684;&#x4F4E;&#x534A;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+wordVal SWORD -101      ; 009Bh
+.code
+mov dx, 0
+mov ax, wordVal         ; DX:AX = 0000009Bh (+155
+mov bx, 2               ; BX &#x662F;&#x9664;&#x6570;
+idiv bx                 ; DX:AX&#x9664;&#x4EE5;BX (&#x6709;&#x7B26;&#x53F7;&#x64CD;&#x4F5C;)
+</code></pre>
+<p>&#x53EF;&#x60DC;&#x7684;&#x662F;&#xFF0C;DX:AX &#x4E2D;&#x7684; 009Bh &#x5E76;&#x4E0D;&#x7B49;&#x4E8E; -101&#xFF0C;&#x5B83;&#x7B49;&#x4E8E; +155&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9664;&#x6CD5;&#x4EA7;&#x751F;&#x7684;&#x5546;&#x4E3A; +77&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x6240;&#x671F;&#x671B;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x800C;&#x89E3;&#x51B3;&#x8BE5;&#x95EE;&#x9898;&#x7684;&#x6B63;&#x786E;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528; CWD( &#x5B57;&#x8F6C;&#x53CC;&#x5B57; ) &#x6307;&#x4EE4;&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x9664;&#x6CD5;&#x4E4B;&#x524D;&#x5728; DX:AX &#x4E2D;&#x5BF9; AX &#x8FDB;&#x884C;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+wordVal SWORD -101        ; 009Bh
+.code
+mov dx, 0
+mov ax, wordVal            ; DX:AX = 0000009Bh (+155)
+cwd                        ; DX:AX = FFFFFF9Bh (-101 )
+mov bx, 2
+idiv bx
+</code></pre>
+<p>x86 &#x6307;&#x4EE4;&#x96C6;&#x6709;&#x51E0;&#x79CD;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#x3002;&#x9996;&#x5148;&#x4E86;&#x89E3;&#x8FD9;&#x4E9B;&#x6307;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5C06;&#x5176;&#x5E94;&#x7528;&#x5230;&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;&#x6307;&#x4EE4; IDIV &#x4E2D;&#x3002;</p>
+<h3 id="&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF08;cbw&#x3001;cwd&#x3001;cdq&#xFF09;"><a name="&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF08;cbw&#x3001;cwd&#x3001;cdq&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF08;cbw&#x3001;cwd&#x3001;cdq&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF08;CBW&#x3001;CWD&#x3001;CDQ&#xFF09;</h3>
+<p>Intel &#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x79CD;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x6307;&#x4EE4;&#xFF1A;CBW&#x3001;CWD &#x548C; CDQ&#x3002;CBW&#xFF08;&#x5B57;&#x8282;&#x8F6C;&#x5B57;&#xFF09;&#x6307;&#x4EE4;&#x5C06; AL &#x7684;&#x7B26;&#x53F7;&#x4F4D;&#x6269;&#x5C55;&#x5230; AH&#xFF0C;&#x4FDD;&#x7559;&#x4E86;&#x6570;&#x636E;&#x7684;&#x7B26;&#x53F7;&#x3002;&#x5982;&#x4E0B;&#x4F8B;&#x6240;&#x793A;&#xFF0C;9Bh&#xFF08;AL &#x4E2D;&#xFF09;&#x548C; FF9Bh &#xFF08;AX &#x4E2D;&#xFF09;&#x90FD;&#x7B49;&#x4E8E;&#x5341;&#x8FDB;&#x5236;&#x7684; -101&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+byteVal SBYTE -101        ; 9Bh
+.code
+mov al, byteVal            ; AL = 9Bh
+cbw                        ; AX = FF9Bh
+</code></pre>
+<p>CWD&#xFF08;&#x5B57;&#x8F6C;&#x53CC;&#x5B57;&#xFF09;&#x6307;&#x4EE4;&#x5C06; AX &#x7684;&#x7B26;&#x53F7;&#x4F4D;&#x6269;&#x5C55;&#x5230; DX&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+wordVal SWORD -101        ; FF9Bh
+.code
+mov ax, wordVal            ; AX = FF9Bh
+cwd                     ; DX:AX = FFFFFF9Bh
+</code></pre>
+<p>CDQ&#xFF08;&#x53CC;&#x5B57;&#x8F6C;&#x56DB;&#x5B57;&#xFF09;&#x6307;&#x4EE4;&#x5C06; EAX &#x7684;&#x7B26;&#x53F7;&#x4F4D;&#x6269;&#x5C55;&#x5230; EDX&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+dwordVal SDWORD -101    ; FFFFFF9Bh
+.code
+mov eax, dwordVal
+cdq                     ; EDX:EAX = FFFFFFFFFFFFFF9Bh
+</code></pre>
+<h3 id="idiv-&#x6307;&#x4EE4;"><a name="idiv-&#x6307;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#idiv-&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. IDIV &#x6307;&#x4EE4;</h3>
+<p>IDIV&#xFF08;&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;&#xFF09;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x9664;&#x6CD5;&#xFF0C;&#x5176;&#x64CD;&#x4F5C;&#x6570;&#x4E0E; DIV &#x6307;&#x4EE4;&#x76F8;&#x540C;&#x3002;&#x6267;&#x884C; 8 &#x4F4D;&#x9664;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;&#x88AB;&#x9664;&#x6570;&#xFF08;AX&#xFF09;&#x5FC5;&#x987B;&#x5B8C;&#x6210;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x3002;&#x4F59;&#x6570;&#x7684;&#x7B26;&#x53F7;&#x603B;&#x662F;&#x4E0E;&#x88AB;&#x9664;&#x6570;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x3010;&#x793A;&#x4F8B; 1&#x3011;&#x4E0B;&#x8FF0;&#x6307;&#x4EE4;&#x5B9E;&#x73B0; -48 &#x9664;&#x4EE5; 5&#x3002;IDIV &#x6267;&#x884C;&#x540E;&#xFF0C;AL &#x4E2D;&#x7684;&#x5546;&#x4E3A; -9&#xFF0C;AH &#x4E2D;&#x7684;&#x4F59;&#x6570;&#x4E3A; -3&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+byteVal SBYTE -48       ;D0 &#x5341;&#x516D;&#x8FDB;&#x5236;
+.code
+mov al, byteVal         ;&#x88AB;&#x9664;&#x6570;&#x7684;&#x4F4E;&#x5B57;&#x8282;
+cbw                     ;AL&#x6269;&#x5C55;&#x5230;AH
+mov bl,+5               ;&#x9664;&#x6570;
+idiv bl                 ;AL = -9, AH = -3
+</code></pre>
+<p>&#x4E0B;&#x56FE;&#x5C55;&#x793A;&#x4E86; AL &#x662F;&#x5982;&#x4F55;&#x901A;&#x8FC7; CBW &#x6307;&#x4EE4;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x4E3A; AX &#x7684;&#xFF1A;</p>
+<p><img src="http://c.biancheng.net/uploads/allimg/190510/4-1Z5101FIO37.gif" alt="img"></p>
+<p>&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x88AB;&#x9664;&#x6570;&#x7684;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x91CD;&#x8981;&#xFF0C;&#x73B0;&#x5728;&#x5728;&#x4E0D;&#x8FDB;&#x884C;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x91CD;&#x590D;&#x4E4B;&#x524D;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C06; AH &#x521D;&#x59CB;&#x5316;&#x4E3A; 0&#xFF0C;&#x8FD9;&#x6837;&#x5B83;&#x5C31;&#x6709;&#x4E86;&#x786E;&#x5B9A;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x6CA1;&#x6709;&#x7528; CBW &#x6307;&#x4EE4;&#x8F6C;&#x6362;&#x88AB;&#x9664;&#x6570;&#x5C31;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x4E86;&#x9664;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+byteVal SBYTE -48       ;D0 &#x5341;&#x516D;&#x8FDB;&#x5236;
+.code
+mov ah, 0               ;&#x88AB;&#x9664;&#x6570;&#x9AD8;&#x5B57;&#x8282;
+mov al, byteVal         ;&#x88AB;&#x9664;&#x6570;&#x4F4E;&#x5B57;&#x8282;
+mov bl, +5              ;&#x9664;&#x6570;
+idiv bl                 ;AL = 41z AH = 3
+</code></pre>
+<p>&#x6267;&#x884C;&#x9664;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;AX=00D0h ( &#x5341;&#x8FDB;&#x5236;&#x6570; 208)&#x3002; IDIV &#x628A;&#x8FD9;&#x4E2A;&#x6570;&#x9664;&#x4EE5; 5&#xFF0C;&#x751F;&#x6210;&#x7684;&#x5546;&#x4E3A;&#x5341;&#x8FDB;&#x5236;&#x6570; 41&#xFF0C;&#x4F59;&#x6570;&#x4E3A;3&#x3002;&#x8FD9;&#x663E;&#x7136;&#x4E0D;&#x662F;&#x6B63;&#x786E;&#x7B54;&#x6848;&#x3002;</p>
+<p>&#x3010;&#x793A;&#x4F8B; 2&#x3011;16 &#x4F4D;&#x9664;&#x6CD5;&#x8981;&#x6C42; AX &#x7B26;&#x53F7;&#x6269;&#x5C55;&#x5230; DX&#x3002;&#x4E0B;&#x4F8B;&#x6267;&#x884C; -5000 &#x9664;&#x4EE5; 256&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+wordVal SWORD -5000
+.code
+mov ax, wordVal            ;&#x88AB;&#x9664;&#x6570;&#x7684;&#x4F4E;&#x5B57;
+cwd                        ;AX&#x6269;&#x5C55;&#x5230;DX
+mov bx, +256            ;&#x9664;&#x6570;
+idiv bx                    ;&#x5546; AX=-19,&#x4F59;&#x6570; DX=-136
+</code></pre>
+<p>&#x3010;&#x793A;&#x4F8B; 3&#x3011;32 &#x4F4D;&#x9664;&#x6CD5;&#x8981;&#x6C42; EAX &#x7B26;&#x53F7;&#x6269;&#x5C55;&#x5230; EDX&#x3002;&#x4E0B;&#x4F8B;&#x6267;&#x884C; 50 000 &#x9664;&#x4EE5; -256&#xFF1A;</p>
+<pre><code class="lang-assembly">.data
+dwordVal SDWORD +50000
+.code
+mov eax, dwordVal        ;&#x88AB;&#x9664;&#x6570;&#x7684;&#x4F4E;&#x53CC;&#x5B57;
+cdq                        ;EAX &#x6269;&#x5C55;&#x81F3;q EDX
+mov ebx, -256            ;&#x9664;&#x6570;
+idiv ebx                ;&#x5546; EAX=-195,&#x4F59;&#x6570; EDX=+80
+</code></pre>
+<p>&#x6267;&#x884C; DIV &#x548C; IDIV &#x540E;&#xFF0C;&#x6240;&#x6709;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x4F4D;&#x7684;&#x503C;&#x90FD;&#x4E0D;&#x786E;&#x5B9A;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">Written by Visors all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x6863;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
+2019-12-22 15:50
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4-3.html" class="navigation navigation-prev " aria-label="Previous page: 4.3 乘法指令">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-5.html" class="navigation navigation-next " aria-label="Next page: 4.5 大数的加减">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4 除法指令","level":"1.5.4","depth":2,"next":{"title":"4.5 大数的加减","level":"1.5.5","depth":2,"path":"4-5.md","ref":"4-5.md","articles":[]},"previous":{"title":"4.3 乘法指令","level":"1.5.3","depth":2,"path":"4-3.md","ref":"4-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"4-4.md","mtime":"2019-12-22T07:50:20.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-22T07:54:03.105Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

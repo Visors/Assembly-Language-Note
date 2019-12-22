@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1 计算机中数的表示 · 汇编语言学习笔记</title>
+        <title>4.6 微代码抽象级 · 汇编语言学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -89,10 +89,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1-1.html" />
     
-    
-    <link rel="prev" href="./" />
+    <link rel="prev" href="4-5.html" />
     
 
     </head>
@@ -134,7 +132,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -478,7 +476,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="4-6.html">
+        <li class="chapter active" data-level="1.5.6" data-path="4-6.html">
             
                 <a href="4-6.html">
             
@@ -526,7 +524,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >1 计算机中数的表示</a>
+        <a href="." >4.6 微代码抽象级</a>
     </h1>
 </div>
 
@@ -541,10 +539,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#1-&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;"><b> </b>1 &#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;</a></li></ul></div><a href="#1-&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="1-&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;"><a name="1-&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;" class="anchor-navigation-ex-anchor" href="#1-&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a> 1 &#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x6570;&#x7684;&#x8868;&#x793A;</h1>
-<p>&#x672C;&#x7AE0;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x6570;&#x7684;&#x8868;&#x793A;&#x548C;&#x8FD0;&#x7B97;&#x3002;&#x662F;&#x57FA;&#x7840;&#x4E2D;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x5F88;&#x591A;&#x7AE0;&#x8282;&#x90FD;&#x57FA;&#x4E8E;&#x8FD9;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x3002; </p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#46-&#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;"><b> </b>4.6 &#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;</a></li></ul></div><a href="#46-&#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="46-&#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;"><a name="46-&#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#46-&#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a> 4.6 &#x5FAE;&#x4EE3;&#x7801;&#x62BD;&#x8C61;&#x7EA7;</h1>
+<p>&#x7B80;&#x8A00;&#x4E4B;&#x5C31;&#x662F;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x662F;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x7EA7;&#xFF0C;&#x8FD8;&#x4E0D;&#x591F;&#x5E95;&#x5C42;&#x3002;</p>
+<p>&#x4ECB;&#x4E8E;&#x6570;&#x5B57;&#x7535;&#x8DEF;&#x7EA7;&#x548C;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x7EA7;&#x4E4B;&#x95F4;&#x8FD8;&#x6709;&#x4E2A;&#x5FAE;&#x4EE3;&#x7801;&#x96C6;&#xFF0C;&#x4E00;&#x822C;&#x96C6;&#x6210;&#x5728;CPU&#x7684;&#x6C38;&#x4E45;&#x5B58;&#x50A8;&#x5668;&#x91CC;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Written by Visors all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x6863;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2019-09-16 23:43
+2019-12-22 15:53
 </span></footer>
                                 
                                 </section>
@@ -572,14 +571,10 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 前言">
+                <a href="4-5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 4.5 大数的加减">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="1-1.html" class="navigation navigation-next " aria-label="Next page: 1.1 二进制和十六进制数">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -588,7 +583,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1 计算机中数的表示","level":"1.2","depth":1,"next":{"title":"1.1 二进制和十六进制数","level":"1.2.1","depth":2,"path":"1-1.md","ref":"1-1.md","articles":[]},"previous":{"title":"前言","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"1.md","mtime":"2019-09-16T15:43:13.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-22T07:54:03.105Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.6 微代码抽象级","level":"1.5.6","depth":2,"previous":{"title":"4.5 大数的加减","level":"1.5.5","depth":2,"path":"4-5.md","ref":"4-5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"4-6.md","mtime":"2019-12-22T07:53:52.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-22T07:54:03.105Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
