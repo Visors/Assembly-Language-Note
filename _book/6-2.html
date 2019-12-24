@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.3 程序的汇编、链接和运行 · 汇编语言学习笔记</title>
+        <title>6.2 过程体、调用和返回 · 汇编语言学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -89,10 +89,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3-4.html" />
+    <link rel="next" href="6-3.html" />
     
     
-    <link rel="prev" href="3-2.html" />
+    <link rel="prev" href="6-1.html" />
     
 
     </head>
@@ -316,7 +316,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="3-3.html">
+        <li class="chapter " data-level="1.4.3" data-path="3-3.html">
             
                 <a href="3-3.html">
             
@@ -607,7 +607,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="6-2.html">
+        <li class="chapter active" data-level="1.7.2" data-path="6-2.html">
             
                 <a href="6-2.html">
             
@@ -694,7 +694,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3.3 程序的汇编、链接和运行</a>
+        <a href="." >6.2 过程体、调用和返回</a>
     </h1>
 </div>
 
@@ -709,10 +709,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><b> </b>3.3 &#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;</a></li></ul></div><a href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><a name="33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;" class="anchor-navigation-ex-anchor" href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a> 3.3 &#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;</h1>
-<p>&#x4E86;&#x89E3;&#x4E0B;windbg&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#62-&#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;"><b> </b>6.2 &#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8FC7;&#x7A0B;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;"><b>1. </b>&#x8FC7;&#x7A0B;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#&#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;"><b>2. </b>&#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6807;&#x53F7;"><b>3. </b>&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6807;&#x53F7;</a></li><li><span class="title-icon "></span><a href="#call-ret"><b>4. </b>CALL RET</a></li><li><span class="title-icon "></span><a href="#&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x793A;&#x4F8B;"><b>5. </b>&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x793A;&#x4F8B;</a></li></ul></ul></div><a href="#62-&#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="62-&#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;"><a name="62-&#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;" class="anchor-navigation-ex-anchor" href="#62-&#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;"><i class="fa fa-link" aria-hidden="true"></i></a> 6.2 &#x8FC7;&#x7A0B;&#x4F53;&#x3001;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;</h1>
+<h2 id="&#x8FC7;&#x7A0B;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;"><a name="&#x8FC7;&#x7A0B;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x7A0B;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x8FC7;&#x7A0B;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x5173;&#x7CFB;</h2>
+<p>&#x5982;&#x679C;&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x5B66;&#x8FC7;&#x4E86;&#x9AD8;&#x7EA7;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x77E5;&#x9053;&#x5C06;&#x7A0B;&#x5E8F;&#x5206;&#x5272;&#x4E3A;&#x5B50;&#x8FC7;&#x7A0B;&#xFF08;subroutine&#xFF09;&#x662F;&#x591A;&#x4E48;&#x6709;&#x7528;&#x3002;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#x5E38;&#x5E38;&#x8981;&#x5206;&#x89E3;&#x4E3A;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x6613;&#x4E8E;&#x88AB;&#x7406;&#x89E3;&#x3001;&#x5B9E;&#x73B0;&#x4EE5;&#x53CA;&#x6709;&#x6548;&#x5730;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p>&#x5728;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x672F;&#x8BED;&#x8FC7;&#x7A0B;&#xFF08;procedure&#xFF09;&#x6765;&#x6307;&#x4EE3;&#x5B50;&#x7A0B;&#x5E8F;&#x3002;&#x5728;&#x5176;&#x4ED6;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5B50;&#x7A0B;&#x5E8F;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x65B9;&#x6CD5;&#x6216;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5C31;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x800C;&#x8A00;&#xFF0C;&#x5355;&#x4E2A;&#x7C7B;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x5927;&#x81F4;&#x76F8;&#x5F53;&#x4E8E;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x8FC7;&#x7A0B;&#x548C;&#x6570;&#x636E;&#x96C6;&#x5408;&#x3002;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x51FA;&#x73B0;&#x7684;&#x65F6;&#x95F4;&#x8FDC;&#x65E9;&#x4E8E;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4E0D;&#x5177;&#x5907;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x5F62;&#x5F0F;&#x5316;&#x7ED3;&#x6784;&#x3002;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x987B;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x5F62;&#x5F0F;&#x5316;&#x7ED3;&#x6784;&#x3002;</p>
+<h2 id="&#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;"><a name="&#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5B9A;&#x4E49;&#x8FC7;&#x7A0B;</h2>
+<p>&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x975E;&#x6B63;&#x5F0F;&#x5730;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A;&#x7531;&#x8FD4;&#x56DE;&#x8BED;&#x53E5;&#x7ED3;&#x675F;&#x7684;&#x5DF2;&#x547D;&#x540D;&#x7684;&#x8BED;&#x53E5;&#x5757;&#x3002;&#x8FC7;&#x7A0B;&#x7528; PROC &#x548C; ENDP &#x4F2A;&#x6307;&#x4EE4;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x4E3A;&#x5176;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF08;&#x6709;&#x6548;&#x6807;&#x8BC6;&#x7B26;&#xFF09;&#x3002;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6240;&#x6709;&#x7F16;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x90FD;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; main &#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-assembly">main PROC
+    ;&#x8FC7;&#x7A0B;&#x5185;&#x5BB9;
+main ENDP
+</code></pre>
+<p>&#x5F53;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x4E4B;&#x5916;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#x65F6;&#xFF0C;&#x5C31;&#x7528; RET &#x6307;&#x4EE4;&#x6765;&#x7ED3;&#x675F;&#x5B83;&#x3002;RET &#x5F3A;&#x5236; CPU &#x8FD4;&#x56DE;&#x5230;&#x8BE5;&#x8FC7;&#x7A0B;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-assembly">sample PROC
+    ;&#x8FC7;&#x7A0B;&#x5185;&#x5BB9;
+    ret
+sample ENDP
+</code></pre>
+<h2 id="&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6807;&#x53F7;"><a name="&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6807;&#x53F7;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6807;&#x53F7;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6807;&#x53F7;</h2>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6807;&#x53F7;&#x53EA;&#x5728;&#x5176;&#x88AB;&#x5B9A;&#x4E49;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x89C1;&#x3002;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x5E38;&#x5E38;&#x5F71;&#x54CD;&#x5230;&#x8DF3;&#x8F6C;&#x548C;&#x5FAA;&#x73AF;&#x6307;&#x4EE4;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x540D;&#x4E3A; Destination &#x7684;&#x6807;&#x53F7;&#x5FC5;&#x987B;&#x4E0E; JMP &#x6307;&#x4EE4;&#x4F4D;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF1A;</p>
+<p><code>jmp Destination</code></p>
+<p>&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x9650;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x6807;&#x53F7;&#xFF0C;&#x5373;&#x5728;&#x540D;&#x5B57;&#x540E;&#x9762;&#x52A0;&#x53CC;&#x5192;&#x53F7; (::)&#x3002;</p>
+<pre><code class="lang-Destination::```">
+&#x5C31;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x800C;&#x8A00;&#xFF0C;&#x8DF3;&#x8F6C;&#x6216;&#x5FAA;&#x73AF;&#x5230;&#x5F53;&#x524D;&#x8FC7;&#x7A0B;&#x4E4B;&#x5916;&#x4E0D;&#x662F;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#x3002;&#x8FC7;&#x7A0B;&#x7528;&#x81EA;&#x52A8;&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;&#x5E76;&#x8C03;&#x6574;&#x8FD0;&#x884C;&#x65F6;&#x5806;&#x6808;&#x3002;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x8DF3;&#x51FA;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x5219;&#x8FD0;&#x884C;&#x65F6;&#x5806;&#x6808;&#x5F88;&#x5BB9;&#x6613;&#x88AB;&#x635F;&#x574F;&#x3002;
+
+## &#x793A;&#x4F8B;&#xFF1A;&#x4E09;&#x4E2A;&#x6574;&#x6570;&#x6C42;&#x548C;
+
+&#x73B0;&#x5728;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; SumOf &#x7684;&#x8FC7;&#x7A0B;&#x8BA1;&#x7B97;&#x4E09;&#x4E2A; 32 &#x4F4D;&#x6574;&#x6570;&#x4E4B;&#x548C;&#x3002;**&#x5047;&#x8BBE;&#x5728;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;&#x4E4B;&#x524D;&#xFF0C;&#x6574;&#x6570;&#x5DF2;&#x7ECF;&#x5206;&#x914D;&#x7ED9; EAX&#x3001;EBX &#x548C; ECX**&#x3002;&#x8FC7;&#x7A0B;&#x7528; EAX &#x8FD4;&#x56DE;&#x548C;&#x6570;&#xFF1A;
+
+```assembly
+SumOf PROC NEAR32    ; &#x8BFE;&#x5802;&#x4E0A;&#x6211;&#x4EEC;&#x8FD9;&#x4E48;&#x5199;
+    add eax,ebx
+    add eax,ecx
+    ret
+SumOf ENDP
+</code></pre>
+<h2 id="call-ret"><a name="call-ret" class="anchor-navigation-ex-anchor" href="#call-ret"><i class="fa fa-link" aria-hidden="true"></i></a>4. CALL RET</h2>
+<p>CALL &#x6307;&#x4EE4;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x6307;&#x6325;&#x5904;&#x7406;&#x5668;&#x4ECE;&#x65B0;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x3002;&#x8FC7;&#x7A0B;&#x4F7F;&#x7528; RET&#xFF08;&#x4ECE;&#x8FC7;&#x7A0B;&#x8FD4;&#x56DE;&#xFF09;&#x6307;&#x4EE4;&#x5C06;&#x5904;&#x7406;&#x5668;&#x8F6C;&#x56DE;&#x5230;&#x8BE5;&#x8FC7;&#x7A0B;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x7A0B;&#x5E8F;&#x70B9;&#x4E0A;&#x3002;</p>
+<p>&#x4ECE;&#x7269;&#x7406;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;<strong>CALL &#x6307;&#x4EE4;&#x5C06;&#x5176;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#x538B;&#x5165;&#x5806;&#x6808;&#xFF0C;&#x518D;&#x628A;&#x88AB;&#x8C03;&#x7528;&#x8FC7;&#x7A0B;&#x7684;&#x5730;&#x5740;&#x590D;&#x5236;&#x5230;&#x6307;&#x4EE4;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;</strong>&#x3002;&#x5F53;&#x8FC7;&#x7A0B;&#x51C6;&#x5907;&#x8FD4;&#x56DE;&#x65F6;&#xFF0C;&#x5B83;&#x7684; <strong>RET &#x6307;&#x4EE4;&#x4ECE;&#x5806;&#x6808;&#x628A;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#x5F39;&#x56DE;&#x5230;&#x6307;&#x4EE4;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;</strong>&#x3002;32 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;CPU &#x6267;&#x884C;&#x7684;&#x6307;&#x4EE4;&#x7531; EIP&#xFF08;&#x6307;&#x4EE4;&#x6307;&#x9488;&#x5BC4;&#x5B58;&#x5668;&#xFF09;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x6307;&#x5C80;&#x3002;16 &#x4F4D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x7531; IP &#x6307;&#x51FA;&#x6307;&#x4EE4;&#x3002;</p>
+<h2 id="&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x793A;&#x4F8B;"><a name="&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x793A;&#x4F8B;</h2>
+<p>&#x5047;&#x8BBE;&#x5728; main &#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;CALL &#x6307;&#x4EE4;&#x4F4D;&#x4E8E;&#x504F;&#x79FB;&#x91CF;&#x4E3A; 0000 0020 &#x5904;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x8FD9;&#x6761;&#x6307;&#x4EE4;&#x9700;&#x8981; 5 &#x4E2A;&#x5B57;&#x8282;&#x7684;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4E0B;&#x4E00;&#x6761;&#x8BED;&#x53E5;&#xFF08;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;&#x4E00;&#x6761; MOV &#x6307;&#x4EE4;&#xFF09;&#x5C31;&#x4F4D;&#x4E8E;&#x504F;&#x79FB;&#x91CF;&#x4E3A; 0000 0025 &#x5904;&#xFF1A;</p>
+<pre><code class="lang-assembly">main PROC
+00000020 call MySub
+00000025 mov eax,ebx
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x5047;&#x8BBE; MySub &#x8FC7;&#x7A0B;&#x4E2D;&#x7B2C;&#x4E00;&#x6761;&#x53EF;&#x6267;&#x884C;&#x6307;&#x4EE4;&#x4F4D;&#x4E8E;&#x504F;&#x79FB;&#x91CF; 0000 0040 &#x5904;&#xFF1A;</p>
+<pre><code class="lang-assembly">MySub PROC
+00000040 mov eaxz edx
+    ...
+    ...
+    ret
+MySub ENDP
+</code></pre>
+<p>&#x5F53; CALL &#x6307;&#x4EE4;&#x6267;&#x884C;&#x65F6;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#x7684;&#x5730;&#x5740;&#xFF08;0000 0025&#xFF09;&#x88AB;&#x538B;&#x5165;&#x5806;&#x6808;&#xFF0C;MySub &#x7684;&#x5730;&#x5740;&#x52A0;&#x8F7D;&#x5230; EIP&#x3002;</p>
+<p><img src="http://c.biancheng.net/uploads/allimg/190505/4-1Z5051K14A60.gif" alt="&#x6267;&#x884C;CALL&#x6307;&#x4EE4;"></p>
+<p>&#x6267;&#x884C; MySub &#x4E2D;&#x7684;&#x5168;&#x90E8;&#x6307;&#x4EE4;&#x76F4;&#x5230; RET &#x6307;&#x4EE4;&#x3002;&#x5F53;&#x6267;&#x884C; RET &#x6307;&#x4EE4;&#x65F6;&#xFF0C;ESP &#x6307;&#x5411;&#x7684;&#x5806;&#x6808;&#x6570;&#x503C;&#x88AB;&#x5F39;&#x5C80;&#x5230; EIP&#xFF08;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x6B65;&#x9AA4; 1&#xFF09;&#x3002;&#x5728;&#x6B65;&#x9AA4; 2 &#x4E2D;&#xFF0C;ESP &#x7684;&#x6570;&#x503C;&#x589E;&#x52A0;&#xFF0C;&#x4ECE;&#x800C;&#x6307;&#x5411;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#xFF08;&#x6B65;&#x9AA4; 2&#xFF09;&#x3002;</p>
+<p><img src="http://c.biancheng.net/uploads/allimg/190505/4-1Z5051K214956.gif" alt="&#x6267;&#x884C;RET&#x6307;&#x4EE4;"></p>
+<p><code>ret count</code></p>
+<p>&#x5982;&#x679C;&#x4F60;&#x89C1;&#x5230;&#x4E0A;&#x9762; ret &#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x4E0D;&#x5FC5;&#x60CA;&#x614C;&#xFF0C;&#x4ED6;&#x662F;&#x5148;&#x8FD4;&#x56DE;&#x8FC7;&#x7A0B;&#x5730;&#x5740;&#xFF0C;&#x518D; pop count &#x4E2A;&#x5B57;&#x8282;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">Written by Visors all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x6863;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2019-09-26 01:11
+2019-12-24 16:48
 </span></footer>
                                 
                                 </section>
@@ -740,12 +796,12 @@
 
             
                 
-                <a href="3-2.html" class="navigation navigation-prev " aria-label="Previous page: 3.2 一个完整的实例">
+                <a href="6-1.html" class="navigation navigation-prev " aria-label="Previous page: 6.1 80x86堆栈">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3-4.html" class="navigation navigation-next " aria-label="Next page: 3.4 汇编器清单文件">
+                <a href="6-3.html" class="navigation navigation-next " aria-label="Next page: 6.3 参数和局部变量">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -756,7 +812,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3 程序的汇编、链接和运行","level":"1.4.3","depth":2,"next":{"title":"3.4 汇编器清单文件","level":"1.4.4","depth":2,"path":"3-4.md","ref":"3-4.md","articles":[]},"previous":{"title":"3.2 一个完整的实例","level":"1.4.2","depth":2,"path":"3-2.md","ref":"3-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"3-3.md","mtime":"2019-09-25T17:11:12.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:17:51.942Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.2 过程体、调用和返回","level":"1.7.2","depth":2,"next":{"title":"6.3 参数和局部变量","level":"1.7.3","depth":2,"path":"6-3.md","ref":"6-3.md","articles":[]},"previous":{"title":"6.1 80x86堆栈","level":"1.7.1","depth":2,"path":"6-1.md","ref":"6-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"6-2.md","mtime":"2019-12-24T08:48:01.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:17:51.942Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

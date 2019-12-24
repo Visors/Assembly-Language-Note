@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.3 程序的汇编、链接和运行 · 汇编语言学习笔记</title>
+        <title>6.5 其它体系结构：没有堆栈的过程 · 汇编语言学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -89,10 +89,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3-4.html" />
     
-    
-    <link rel="prev" href="3-2.html" />
+    <link rel="prev" href="6-4.html" />
     
 
     </head>
@@ -316,7 +314,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="3-3.html">
+        <li class="chapter " data-level="1.4.3" data-path="3-3.html">
             
                 <a href="3-3.html">
             
@@ -646,7 +644,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.5" data-path="6-5.html">
+        <li class="chapter active" data-level="1.7.5" data-path="6-5.html">
             
                 <a href="6-5.html">
             
@@ -694,7 +692,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3.3 程序的汇编、链接和运行</a>
+        <a href="." >6.5 其它体系结构：没有堆栈的过程</a>
     </h1>
 </div>
 
@@ -709,10 +707,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><b> </b>3.3 &#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;</a></li></ul></div><a href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><a name="33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;" class="anchor-navigation-ex-anchor" href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a> 3.3 &#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;</h1>
-<p>&#x4E86;&#x89E3;&#x4E0B;windbg&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#65-&#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;"><b> </b>6.5 &#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;</a></li></ul></div><a href="#65-&#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="65-&#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;"><a name="65-&#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#65-&#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a> 6.5 &#x5176;&#x5B83;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x6CA1;&#x6709;&#x5806;&#x6808;&#x7684;&#x8FC7;&#x7A0B;</h1>
 <footer class="page-footer"><span class="copyright">Written by Visors all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x6863;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2019-09-26 01:11
+2019-12-24 14:47
 </span></footer>
                                 
                                 </section>
@@ -740,14 +737,10 @@
 
             
                 
-                <a href="3-2.html" class="navigation navigation-prev " aria-label="Previous page: 3.2 一个完整的实例">
+                <a href="6-4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 6.4 递归">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="3-4.html" class="navigation navigation-next " aria-label="Next page: 3.4 汇编器清单文件">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -756,7 +749,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3 程序的汇编、链接和运行","level":"1.4.3","depth":2,"next":{"title":"3.4 汇编器清单文件","level":"1.4.4","depth":2,"path":"3-4.md","ref":"3-4.md","articles":[]},"previous":{"title":"3.2 一个完整的实例","level":"1.4.2","depth":2,"path":"3-2.md","ref":"3-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"3-3.md","mtime":"2019-09-25T17:11:12.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:17:51.942Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.5 其它体系结构：没有堆栈的过程","level":"1.7.5","depth":2,"previous":{"title":"6.4 递归","level":"1.7.4","depth":2,"path":"6-4.md","ref":"6-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"6-5.md","mtime":"2019-12-24T06:47:32.163Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:17:51.942Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

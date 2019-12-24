@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.3 程序的汇编、链接和运行 · 汇编语言学习笔记</title>
+        <title>6.3 参数和局部变量 · 汇编语言学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -89,10 +89,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3-4.html" />
+    <link rel="next" href="6-4.html" />
     
     
-    <link rel="prev" href="3-2.html" />
+    <link rel="prev" href="6-2.html" />
     
 
     </head>
@@ -316,7 +316,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="3-3.html">
+        <li class="chapter " data-level="1.4.3" data-path="3-3.html">
             
                 <a href="3-3.html">
             
@@ -620,7 +620,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="6-3.html">
+        <li class="chapter active" data-level="1.7.3" data-path="6-3.html">
             
                 <a href="6-3.html">
             
@@ -694,7 +694,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3.3 程序的汇编、链接和运行</a>
+        <a href="." >6.3 参数和局部变量</a>
     </h1>
 </div>
 
@@ -709,10 +709,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><b> </b>3.3 &#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;</a></li></ul></div><a href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><a name="33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;" class="anchor-navigation-ex-anchor" href="#33-&#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;"><i class="fa fa-link" aria-hidden="true"></i></a> 3.3 &#x7A0B;&#x5E8F;&#x7684;&#x6C47;&#x7F16;&#x3001;&#x94FE;&#x63A5;&#x548C;&#x8FD0;&#x884C;</h1>
-<p>&#x4E86;&#x89E3;&#x4E0B;windbg&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#63-&#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;"><b> </b>6.3 &#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</a></li><ul><li><span class="title-icon "></span><a href="#&#x53C2;&#x6570;&#x4F20;&#x9012;"><b>1. </b>&#x53C2;&#x6570;&#x4F20;&#x9012;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6CD5;&#x4E00;-ret-count"><b>1.1. </b>&#x6CD5;&#x4E00; ret count</a></li><li><span class="title-icon "></span><a href="#&#x6CD5;&#x4E8C;-add-esp-count"><b>1.2. </b>&#x6CD5;&#x4E8C; add esp, count</a></li></ul><li><span class="title-icon "></span><a href="#&#x5C40;&#x90E8;&#x53D8;&#x91CF;"><b>2. </b>&#x5C40;&#x90E8;&#x53D8;&#x91CF;</a></li></ul></ul></div><a href="#63-&#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="63-&#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;"><a name="63-&#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#63-&#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a> 6.3 &#x53C2;&#x6570;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</h1>
+<h2 id="&#x53C2;&#x6570;&#x4F20;&#x9012;"><a name="&#x53C2;&#x6570;&#x4F20;&#x9012;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;&#x4F20;&#x9012;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x53C2;&#x6570;&#x4F20;&#x9012;</h2>
+<p>&#x7C7B;&#x4F3C;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7F16;&#x5199;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6709;&#x65F6;&#x9700;&#x8981;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728; call &#x4E4B;&#x524D;&#x5C06;&#x53C2;&#x6570; push &#x8FDB;&#x5806;&#x6808;&#x3002;</p>
+<p>push &#x540E; &#x9700;&#x8981;&#x7528; pop &#x91CA;&#x653E;&#x6808;&#x7A7A;&#x95F4;&#xFF0C;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x65F6;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x4EE5;&#x8BFE;&#x4EF6;&#x4E2D;&#x4EE3;&#x7801;&#x4E3A;&#x4F8B;&#x3002;</p>
+<h3 id="&#x6CD5;&#x4E00;-ret-count"><a name="&#x6CD5;&#x4E00;-ret-count" class="anchor-navigation-ex-anchor" href="#&#x6CD5;&#x4E00;-ret-count"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6CD5;&#x4E00; ret count</h3>
+<p><img src="C:\Users\Visors\AppData\Roaming\Typora\typora-user-images\image-20191224170733109.png" alt="image-20191224170733109"></p>
+<p>&#x5982;&#x56FE;&#x4EE3;&#x7801;&#xFF0C;&#x53F3;&#x8FB9;&#x662F;&#x8C03;&#x7528;&#x4EE3;&#x7801;&#xFF0C;&#x5DE6;&#x8FB9;&#x662F;&#x8FC7;&#x7A0B;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x8C03;&#x7528;&#x8FC7;&#x7A0B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148; push &#x4E86;&#x4E24;&#x4E2A;&#x53C2;&#x6570; a &#x548C; b &#xFF0C;&#x968F;&#x540E; call mianji &#xFF0C;&#x8FD9;&#x65F6;&#x8FC7;&#x7A0B;&#x7684;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#x53C8;&#x4F1A;&#x538B;&#x5165;&#x6808;&#xFF0C;esp &#x6307;&#x5411;&#x7684;&#x5C31;&#x662F;&#x8FC7;&#x7A0B;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; [esp] &#x65B9;&#x6CD5;&#x6765;&#x8BBF;&#x95EE;&#x5BF9;&#x5E94;&#x7684;&#x6808;&#x4E2D;&#x538B;&#x5165;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5728;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x628A;&#x53C2;&#x6570;&#x5F39;&#x51FA;&#xFF0C;&#x7531;&#x4E8E;&#x538B;&#x5165;&#x7684;&#x662F;&#x4E24;&#x4E2A;&#x53CC;&#x5B57;&#xFF0C;&#x6211;&#x4EEC; ret 8.</p>
+<h3 id="&#x6CD5;&#x4E8C;-add-esp-count"><a name="&#x6CD5;&#x4E8C;-add-esp-count" class="anchor-navigation-ex-anchor" href="#&#x6CD5;&#x4E8C;-add-esp-count"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x6CD5;&#x4E8C; add esp, count</h3>
+<p><img src="C:\Users\Visors\AppData\Roaming\Typora\typora-user-images\image-20191224171309014.png" alt="image-20191224171309014"></p>
+<p>&#x4F8B;&#x5982;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5728;&#x5916;&#x90E8;&#x64CD;&#x4F5C; esp &#xFF0C;&#x5C06;&#x4ED6;&#x624B;&#x52A8;&#x589E;&#x52A0;&#x4EE5;&#x201C;&#x65E0;&#x89C6;&#x201D;&#x4E24;&#x4E2A;&#x53CC;&#x5B57;&#x6574;&#x6570;&#x3002;</p>
+<h2 id="&#x5C40;&#x90E8;&#x53D8;&#x91CF;"><a name="&#x5C40;&#x90E8;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#&#x5C40;&#x90E8;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5C40;&#x90E8;&#x53D8;&#x91CF;</h2>
+<p>&#x5728;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528; sub &#x6307;&#x4EE4;&#x5F3A;&#x884C;&#x64CD;&#x4F5C;&#x6808;&#x7684;&#x66F4;&#x4F4E;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">Written by Visors all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x6587;&#x6863;&#x66F4;&#x65B0;&#x4E8E;&#xFF1A;
-2019-09-26 01:11
+2019-12-24 17:17
 </span></footer>
                                 
                                 </section>
@@ -740,12 +753,12 @@
 
             
                 
-                <a href="3-2.html" class="navigation navigation-prev " aria-label="Previous page: 3.2 一个完整的实例">
+                <a href="6-2.html" class="navigation navigation-prev " aria-label="Previous page: 6.2 过程体、调用和返回">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3-4.html" class="navigation navigation-next " aria-label="Next page: 3.4 汇编器清单文件">
+                <a href="6-4.html" class="navigation navigation-next " aria-label="Next page: 6.4 递归">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -756,7 +769,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3 程序的汇编、链接和运行","level":"1.4.3","depth":2,"next":{"title":"3.4 汇编器清单文件","level":"1.4.4","depth":2,"path":"3-4.md","ref":"3-4.md","articles":[]},"previous":{"title":"3.2 一个完整的实例","level":"1.4.2","depth":2,"path":"3-2.md","ref":"3-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"3-3.md","mtime":"2019-09-25T17:11:12.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:17:51.942Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.3 参数和局部变量","level":"1.7.3","depth":2,"next":{"title":"6.4 递归","level":"1.7.4","depth":2,"path":"6-4.md","ref":"6-4.md","articles":[]},"previous":{"title":"6.2 过程体、调用和返回","level":"1.7.2","depth":2,"path":"6-2.md","ref":"6-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["pageview-count","disqus","-sharing","sharing-plus","-lunr","-search","search-plus","anchor-navigation-ex-toc","tbfed-pagefooter","copy-code-button","advanced-emoji","katex","splitter","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Written by Visors","modify_label":"本文档更新于：","modify_format":"YYYY-MM-DD HH:mm"},"disqus":{"useIdentifier":false,"shortName":"asm-2"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false,"floatIcon":"fa fa-navicon"},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"pageview-count":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":[],"douban":false,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"汇编语言学习笔记","language":"zh-hans","links":{"gitbook":false,"sharing":{"weibo":true,"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.2.3","description":"《80x86汇编语言与计算机体系结构》学习笔记"},"file":{"path":"6-3.md","mtime":"2019-12-24T09:17:34.943Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:17:51.942Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
